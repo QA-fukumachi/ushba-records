@@ -127,6 +127,7 @@ a {
 
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 1.5rem;
 }
 
@@ -156,6 +157,73 @@ a {
 
 .nav-btn:hover::before {
     left: 0;
+}
+
+/* About Dropdown Styling */
+.nav-dropdown-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn.has-dropdown {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-dropdown-icon {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: var(--primary-bg);
+    min-width: 160px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 150;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-dropdown-wrapper:hover .nav-dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-wrapper:hover .nav-dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-link {
+    padding: 1rem;
+    color: var(--primary-text);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.nav-dropdown-link:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--accent-color);
 }
 
 .nav-btn.soundcloud-btn:hover {
@@ -246,6 +314,174 @@ a {
     font-size: 1.5rem;
     font-family: var(--font-heading);
     letter-spacing: 3px;
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.mobile-dropdown-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.mobile-dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    opacity: 0;
+}
+
+.mobile-dropdown-content.open {
+    max-height: 200px;
+    margin-top: 1.5rem;
+    opacity: 1;
+}
+
+.mobile-dropdown-link {
+    font-size: 1.1rem;
+    font-family: var(--font-main);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+}
+
+.mobile-dropdown-link:hover {
+    color: #fff;
+}
+
+/* Photographer Section */
+.photographer-section {
+    padding: 4rem 2rem;
+    /* Balanced top and bottom padding */
+    background-color: var(--primary-bg);
+    /* Opaque background */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.photographer-section .releases-dropdown-container {
+    width: 100%;
+}
+
+.photographer-bio {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-start;
+    padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 4px;
+    width: 100%;
+}
+
+.photographer-img {
+    width: 100%;
+    max-width: 300px;
+    /* Restrict image size */
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.photographer-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.85);
+    /* Readable grey-black text */
+}
+
+@media screen and (max-width: 768px) {
+    .photographer-bio {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .photographer-img {
+        max-width: 100%;
+    }
+}
+
+/* Our Vision Section */
+.vision-section {
+    position: relative;
+    padding: 8rem 2rem;
+    color: #fff;
+    z-index: 10;
+    overflow: hidden;
+    /* Ensure content stays above the blurred background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Image with Blur */
+.vision-section::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-image: url('Background\ of\ OUR\ VISION/ushba\ 1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px) brightness(0.4);
+    /* Blur effect plus darkening */
+    z-index: -1;
+}
+
+.vision-section .section-title {
+    color: #fff;
+}
+
+.vision-content {
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: var(--font-main);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.8;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+    /* Puts text definitively above image */
+}
+
+.vision-content p {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+@media screen and (max-width: 768px) {
+    .vision-section {
+        padding: 5rem 1.5rem;
+    }
+
+    .vision-content {
+        text-align: left;
+        /* Better for mobile readability */
+    }
 }
 
 /* Hero Section (Main Page) */
@@ -498,4 +734,356 @@ a {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ================================= */
+/* MOUNT USHBA PAGE (AWWWARDS STYLE) */
+/* ================================= */
+
+.ushba-page {
+    background-color: #050505;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.ushba-page .top-nav {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ushba-page .top-nav .logo-small,
+.ushba-page .top-nav .nav-btn,
+.ushba-page .top-nav .nav-dropdown-icon {
+    color: #fff;
+}
+
+.ushba-page .logo-small::after {
+    background-color: #fff;
+}
+
+.ushba-page .nav-dropdown-link {
+    color: var(--primary-text);
+}
+
+.ushba-page .mobile-toggle span {
+    background-color: #fff;
+}
+
+/* Ushba Hero */
+.ushba-hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.ushba-hero-bg {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    filter: brightness(0.6);
+    transform: translateY(0);
+}
+
+.ushba-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 2rem;
+}
+
+.ushba-title {
+    font-family: var(--font-heading);
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: 5px;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeInSlideUp 1.5s ease-out forwards;
+}
+
+.ushba-title::before {
+    display: none;
+}
+
+.ushba-subtitle {
+    font-family: var(--font-main);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    animation: fadeInSlideUp 1.5s ease-out 0.5s forwards;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0;
+    animation: fadeInSlideUp 1s ease-out 1.5s forwards;
+}
+
+.mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    position: relative;
+}
+
+.mouse::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    animation: scrollWheel 2s infinite;
+}
+
+@keyframes scrollWheel {
+    0% {
+        top: 10px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 30px;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ushba Narrative Grid */
+.ushba-narrative {
+    position: relative;
+    z-index: 5;
+    background-color: #050505;
+    padding: 8rem 0;
+}
+
+.narr-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    /* Give more space to images so text isn't cut off */
+    gap: 4rem;
+    align-items: start;
+    /* Align to top to prevent stretching */
+}
+
+.sticky-block {
+    position: sticky;
+    top: 150px;
+    height: max-content;
+    /* Added padding/box-sizing to ensure content fits within boundaries */
+    padding-right: 20px;
+}
+
+.narr-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.narr-paragraph {
+    font-family: var(--font-main);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+}
+
+.key-facts-card {
+    margin-top: 14rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 4px;
+    width: 100%;
+    /* Ensure it does not overflow */
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    /* Allow text to wrap if it's too long */
+}
+
+.key-facts-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.key-facts-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.key-facts-card li {
+    font-size: clamp(0.9rem, 1vw, 1.1rem);
+    /* Make font slightly responsive */
+    margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    /* Prevent text overlap */
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.8rem;
+}
+
+.key-facts-card li strong {
+    color: #fff;
+    min-width: 120px;
+    /* Give label a minimum width */
+}
+
+.narr-image-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    width: 100%;
+    /* Important to keep images constrained */
+    overflow: hidden;
+    /* Hide horizontal overflow on the scroll track */
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.image-wrapper.in-view {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: scale(1.05);
+    transition: transform 1.5s ease;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1);
+}
+
+.photo-credit {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+.narr-text-mobile {
+    display: none;
+}
+
+@media screen and (min-width: 900px) {
+    .narr-text-mobile {
+        display: block;
+        padding: 3rem 0;
+    }
+}
+
+@media screen and (max-width: 899px) {
+    .narr-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sticky-block {
+        position: relative;
+        top: 0;
+        margin-bottom: 3rem;
+    }
+
+    .narr-text-mobile {
+        display: block;
+        margin-top: -2rem;
+    }
+
+    .narr-image-stack {
+        gap: 3rem;
+    }
+}
+
+/* Footer spacer */
+.ushba-footer {
+    padding: 8rem 2rem;
+    text-align: center;
+    background-color: #050505;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ushba-footer h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: #fff;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.btn-light {
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-light::after {
+    background-color: #fff;
+}
+
+.btn-light:hover {
+    color: #000;
 }
