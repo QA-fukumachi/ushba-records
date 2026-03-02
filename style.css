@@ -168,15 +168,11 @@ a {
     text-shadow: 0 0 10px rgba(98, 154, 169, 0.3);
 }
 
-.nav-btn.contact-btn {
-    border: 1px solid rgba(0, 0, 0, 0.3);
-}
+
 
 .nav-btn.contact-btn:hover {
-    border-color: var(--accent-color);
-    background: rgba(255, 0, 60, 0.1);
     color: var(--accent-color);
-    box-shadow: var(--neon-glow);
+    text-shadow: 0 0 10px rgba(255, 0, 60, 0.3);
 }
 
 /* Mobile Toggle */
