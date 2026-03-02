@@ -84,7 +84,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Optional: Add subtle parallax to the background video if needed 
+    // 5. Dropdown Toggle for Tribute Name
+    const setupTributeDropdown = (triggerId) => {
+        const trigger = document.getElementById(triggerId);
+        if (trigger) {
+            const wrapper = trigger.closest('.tribute-name-wrapper');
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent document click from immediately closing it
+                wrapper.classList.toggle('active');
+            });
+            // Click outside to close
+            document.addEventListener('click', (e) => {
+                if (!wrapper.contains(e.target) && wrapper.classList.contains('active')) {
+                    wrapper.classList.remove('active');
+                }
+            });
+        }
+    };
+
+    setupTributeDropdown('tribute-trigger-index');
+    setupTributeDropdown('tribute-trigger-ushba');
+
+    // 6. Optional: Add subtle parallax to the background video if needed 
     // (Disabled by default to keep high performance, but hook is here)
     /*
     const bgVideo = document.getElementById('bg-video');
