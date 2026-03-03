@@ -818,6 +818,8 @@ a {
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
     gap: 1rem;
     transition: var(--transition);
 }
@@ -878,6 +880,8 @@ a {
 .ushba002-container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .coming-soon-item {
@@ -899,7 +903,7 @@ a {
 }
 
 .coming-soon-img {
-    max-width: 250px;
+    max-width: 400px;
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -909,9 +913,9 @@ a {
 
 .coming-soon-text {
     font-family: var(--font-heading);
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: 700;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     color: #fff;
     margin: 0;
     text-transform: uppercase;
@@ -1304,12 +1308,12 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.2rem;
+    gap: 1rem;
 }
 
 .tribute-text {
     font-family: 'Waterfall', cursive;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
     color: #fff;
     font-weight: 400;
     line-height: 1.2;
@@ -1326,22 +1330,40 @@ a {
 
 .tribute-name-trigger {
     font-family: 'Waterfall', cursive;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2.2rem, 5vw, 3.1rem);
     color: #fff;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 0.8;
     letter-spacing: 2px;
-    padding: 0.1rem 1rem;
+    padding: 0.2rem 3rem;
+    height: 3rem;
     border: 1px solid transparent;
+    background: transparent;
     border-radius: 4px;
     transition: all 0.3s ease;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.tribute-dropdown-icon {
+    font-family: var(--font-main);
+    font-size: clamp(0.5rem, 0.8vw, 0.7rem);
+    transition: transform 0.3s ease;
+    position: absolute;
+    right: 1rem;
+}
+
+.tribute-name-wrapper.active .tribute-dropdown-icon {
+    transform: rotate(180deg);
 }
 
 .tribute-name-wrapper.active .tribute-name-trigger,
-.tribute-name-wrapper:hover .tribute-name-trigger {
-    border-color: rgba(255, 255, 255, 0.4);
-    background: rgba(255, 255, 255, 0.05);
+.tribute-name-trigger:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .tribute-name-dropdown {
