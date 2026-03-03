@@ -763,8 +763,9 @@ a {
     }
 
     .main-title {
-        font-size: 4.5rem;
+        font-size: clamp(2.5rem, 12vw, 4.5rem);
         -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
+        white-space: nowrap;
     }
 
     .subtitle {
@@ -773,10 +774,10 @@ a {
     }
 }
 
-/* Releases Section */
 .releases-section {
     position: relative;
-    padding: 6rem 2rem;
+    padding: 6rem 2rem 0;
+    /* Removed bottom padding */
     background-color: var(--primary-bg);
     /* Opaque background to hide video when scrolled down */
     z-index: 10;
@@ -847,6 +848,9 @@ a {
     max-height: 2000px;
     /* arbitrary large number to allow content */
     transition: max-height 0.8s ease-in-out;
+}
+
+#ushba001-content.open {
     margin-bottom: 2rem;
 }
 
@@ -862,15 +866,55 @@ a {
     /* Slight contrast */
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
     border-radius: 4px;
     overflow: hidden;
 }
 
-.release-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    border-color: rgba(0, 0, 0, 0.3);
+#ushba002-content {
+    width: 100vw;
+    background: #000;
+}
+
+.ushba002-container {
+    display: flex;
+    justify-content: center;
+}
+
+.coming-soon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    gap: 2rem;
+    background: #000;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    box-sizing: border-box;
+}
+
+.coming-soon-img {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Keep the image circular as requested */
+}
+
+.coming-soon-text {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 /* ================================= */

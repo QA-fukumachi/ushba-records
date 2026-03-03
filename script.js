@@ -69,6 +69,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 3.1 Dropdown Toggle for Release USHBA002
+    const releaseToggle002 = document.getElementById('ushba002-toggle');
+    const releaseContent002 = document.getElementById('ushba002-content');
+
+    if (releaseToggle002 && releaseContent002) {
+        releaseToggle002.addEventListener('click', () => {
+            const isExpanded = releaseToggle002.getAttribute('aria-expanded') === 'true';
+
+            // Toggle State
+            releaseToggle002.classList.toggle('active');
+            releaseContent002.classList.toggle('open');
+            releaseToggle002.setAttribute('aria-expanded', !isExpanded);
+        });
+    }
+
     // 4. Dropdown Toggle for Photographer Bio
     const photographerToggle = document.getElementById('photographer-toggle');
     const photographerContent = document.getElementById('photographer-content');
