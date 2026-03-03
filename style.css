@@ -22,13 +22,19 @@
     scroll-behavior: smooth;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     background-color: var(--primary-bg);
     color: var(--primary-text);
     font-family: var(--font-main);
     overflow-x: hidden;
     line-height: 1.6;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 a {
@@ -261,23 +267,22 @@ a {
     height: 2px;
     background-color: #000;
     transition: var(--transition);
-    transform-origin: left center;
+    transform-origin: center;
 }
 
 .mobile-toggle.active span:nth-child(1) {
-    transform: rotate(45deg);
+    transform: translateY(9px) rotate(45deg);
     background-color: #fff;
-    /* white on dark mobile menu */
 }
 
 .mobile-toggle.active span:nth-child(2) {
     opacity: 0;
+    background-color: transparent;
 }
 
 .mobile-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg);
     background-color: #fff;
-    /* white on dark mobile menu */
 }
 
 /* Mobile Menu Overlay */
@@ -776,12 +781,10 @@ a {
 
 .releases-section {
     position: relative;
-    padding: 6rem 2rem 0;
-    /* Removed bottom padding */
+    padding: 6rem 2rem;
     background-color: var(--primary-bg);
     /* Opaque background to hide video when scrolled down */
     z-index: 10;
-    min-height: 100vh;
 }
 
 .section-title {
@@ -877,6 +880,13 @@ a {
 #ushba002-content {
     width: 100vw;
     background: #000;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), margin-bottom 0.5s cubic-bezier(0, 1, 0, 1);
+    margin-bottom: 0;
+}
+
+#ushba002-content.open {
+    margin-bottom: -6rem;
+    transition: max-height 0.8s ease-in-out, margin-bottom 0.8s ease-in-out;
 }
 
 .ushba002-container {
@@ -894,13 +904,9 @@ a {
     padding: 3rem 2rem;
     gap: 2rem;
     background: #000;
-    border-top: 1px dashed rgba(255, 255, 255, 0.2);
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
-    border-left: none;
-    border-right: none;
+    border: none;
     box-shadow: none;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -938,14 +944,16 @@ a {
 }
 
 .ushba-page .top-nav.scrolled {
-    background: #fff;
-    border-bottom: 1px solid var(--glass-border);
+    background: rgba(10, 10, 10, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .ushba-page .top-nav.scrolled .logo-small,
 .ushba-page .top-nav.scrolled .nav-btn,
 .ushba-page .top-nav.scrolled .nav-dropdown-icon {
-    color: #000;
+    color: #fff;
 }
 
 .ushba-page .top-nav:not(.scrolled) .logo-small,
@@ -971,7 +979,7 @@ a {
 }
 
 .ushba-page .top-nav.scrolled .mobile-toggle span {
-    background-color: #000;
+    background-color: #fff;
 }
 
 /* Ushba Hero */
@@ -1041,7 +1049,7 @@ a {
     transform: translateX(-50%);
     z-index: 2;
     opacity: 0;
-    animation: fadeInSlideUp 1s ease-out 1.5s forwards;
+    animation: fadeInSlideUpCenter 1s ease-out 1.5s forwards;
 }
 
 .mouse {
@@ -1087,6 +1095,30 @@ a {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes fadeInSlideUpCenter {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Fix mobile nav ABOUT button centering */
+.mobile-nav-links .nav-btn.has-dropdown {
+    position: relative;
+    justify-content: center;
+}
+
+.mobile-nav-links .nav-dropdown-icon {
+    position: absolute;
+    left: 100%;
+    margin-left: 0.5rem;
 }
 
 /* Ushba Narrative Grid */
