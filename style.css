@@ -1040,6 +1040,7 @@ a {
     animation: fadeInSlideUp 1.5s ease-out 0.5s forwards;
     text-transform: uppercase;
     margin-bottom: 0;
+    text-align: center;
 }
 
 .scroll-indicator {
