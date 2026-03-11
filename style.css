@@ -885,13 +885,22 @@ a {
 #ushba002-content {
     width: 100vw;
     background: #000;
-    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), margin-bottom 0.5s cubic-bezier(0, 1, 0, 1);
+    display: grid;
+    grid-template-rows: 0fr;
+    max-height: none;
+    transition: grid-template-rows 0.5s cubic-bezier(0, 1, 0, 1), margin-bottom 0.5s cubic-bezier(0, 1, 0, 1);
     margin-bottom: 0;
 }
 
 #ushba002-content.open {
+    grid-template-rows: 1fr;
     margin-bottom: -6rem;
-    transition: max-height 0.8s ease-in-out, margin-bottom 0.8s ease-in-out;
+    transition: grid-template-rows 0.8s ease-in-out, margin-bottom 0.8s ease-in-out;
+}
+
+#ushba002-content > .ushba002-container {
+    min-height: 0;
+    overflow: hidden;
 }
 
 .ushba002-container {
