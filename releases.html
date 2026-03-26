@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Releases | USHBA Records</title>
+    <meta name="description" content="Explore every release from USHBA Records. Pure techno frequencies.">
+    <meta name="keywords" content="Techno Releases, USHBA Records, Techno Music">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Waterfall&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="releases-page">
+    <!-- Top Navigation -->
+    <header class="top-nav scrolled">
+        <div class="nav-content">
+            <a href="index.html" class="logo-small">USHBA.</a>
+            <nav class="nav-links">
+                <a href="releases.html" class="nav-btn">Releases</a>
+                <a href="https://soundcloud.com/ushbarecords" target="_blank" rel="noopener noreferrer"
+                    class="nav-btn soundcloud-btn">Soundcloud</a>
+                <a href="https://ushbarecords.bandcamp.com/album/everything-lasts-ep" target="_blank"
+                    rel="noopener noreferrer" class="nav-btn bandcamp-btn">Bandcamp</a>
+                <div class="nav-dropdown-wrapper">
+                    <button class="nav-btn about-btn has-dropdown" aria-expanded="false">
+                        About <span class="nav-dropdown-icon">▼</span>
+                    </button>
+                    <div class="nav-dropdown-content">
+                        <a href="index.html#vision" class="nav-dropdown-link">Our Vision</a>
+                        <a href="ushba.html" class="nav-dropdown-link">Mt. Ushba</a>
+                        <a href="index.html#contact" class="nav-dropdown-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav-links">
+            <a href="releases.html" class="nav-btn">Releases</a>
+            <a href="https://soundcloud.com/ushbarecords" target="_blank" rel="noopener noreferrer"
+                class="nav-btn">Soundcloud</a>
+            <a href="https://ushbarecords.bandcamp.com/album/everything-lasts-ep" target="_blank"
+                rel="noopener noreferrer" class="nav-btn">Bandcamp</a>
+            <div class="mobile-dropdown-wrapper">
+                <button class="nav-btn mobile-about-btn has-dropdown" aria-expanded="false">
+                    About <span class="nav-dropdown-icon">▼</span>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="index.html#vision" class="mobile-dropdown-link">Our Vision</a>
+                    <a href="ushba.html" class="mobile-dropdown-link">Mt. Ushba</a>
+                    <a href="index.html#contact" class="mobile-dropdown-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="all-releases-main">
+        <div class="container releases-container">
+            <h1 class="page-header-title">ALL RELEASES</h1>
+
+            <div class="badges-grid">
+                <!-- Badge 1: USHBA001 -->
+                <article class="badge-card">
+                    <div class="badge-artwork">
+                        <img src="https://res.cloudinary.com/dqm1d4yua/image/upload/v1774346089/USHBA001_ptezmg.png"
+                            alt="Everything Lasts EP [USHBA001]" loading="lazy"
+                            style="padding: 2.5%; background-color: transparent;">
+                        <a href="USHBA001.html" class="play-overlay">
+                            <span class="play-icon">▶</span>
+                        </a>
+                    </div>
+                    <div class="badge-info">
+                        <a href="USHBA001.html" class="badge-title">Everything Lasts EP [USHBA001]</a>
+                        <span class="badge-artist">Fukumachi</span>
+                    </div>
+                </article>
+
+                <!-- Badge 2: USHBA002 -->
+                <article class="badge-card">
+                    <div class="badge-artwork">
+                        <img src="https://res.cloudinary.com/dqm1d4yua/image/upload/v1772533703/ChatGPT_Image_Feb_20_2026_03_08_48_PM_juk2ws.png"
+                            alt="USHBA002" loading="lazy" style="padding: 1.8%;">
+                        <a href="USHBA002.html" class="play-overlay coming-soon-overlay">
+                            <span class="play-icon">⋯</span>
+                        </a>
+                    </div>
+                    <div class="badge-info">
+                        <a href="USHBA002.html" class="badge-title">USHBA002 (Coming Soon)</a>
+                        <span class="badge-artist">USHBA</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 USHBA Records. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

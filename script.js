@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileToggle.addEventListener('click', () => {
         mobileToggle.classList.toggle('active');
         mobileMenu.classList.toggle('active');
+        nav.classList.toggle('menu-open');
 
         // Prevent scrolling when menu is open
         if (mobileMenu.classList.contains('active')) {
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             mobileToggle.classList.remove('active');
             mobileMenu.classList.remove('active');
+            nav.classList.remove('menu-open');
             body.style.overflow = 'auto';
         });
     });
