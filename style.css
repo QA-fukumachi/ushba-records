@@ -74,9 +74,11 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Brightened overlay so the background video shows as a light aesthetic, making the pure black text very visible */
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.8) 100%), linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.9) 100%);
-    z-index: -1;
+    /* Subtle brightened overlay for frosted aesthetic */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.062) 0%, rgba(255, 255, 255, 0.096) 100%), linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.15) 100%);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    z-index: 1;
 }
 
 /* Navigation System - Glassmorphism */
@@ -644,12 +646,10 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 10;
 }
 
 .hero-content {
     padding: 2rem;
-    animation: fadeIn 1.5s ease-out forwards;
     color: #000;
 }
 
@@ -665,6 +665,8 @@ a {
     -webkit-text-stroke: 1px #000;
     position: relative;
     display: inline-block;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
 }
 
 .main-title::before {
@@ -686,6 +688,7 @@ a {
     font-weight: 400;
     letter-spacing: 8px;
     color: rgba(0, 0, 0, 0.8);
+    /* mix-blend-mode: difference; */
     margin-bottom: 3rem;
     opacity: 0;
     animation: slideUp 1s ease-out 2.5s forwards;
@@ -694,6 +697,7 @@ a {
 .hero-actions {
     opacity: 0;
     animation: slideUp 1s ease-out 3s forwards;
+    /* mix-blend-mode: difference; */
 }
 
 .primary-btn {
@@ -712,6 +716,7 @@ a {
     position: relative;
     z-index: 1;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .primary-btn::after {
@@ -732,6 +737,14 @@ a {
 
 .primary-btn:hover::after {
     height: 100%;
+}
+
+.primary-btn.bandcamp-link:hover::after {
+    background-color: #629aa9;
+}
+
+.primary-btn.soundcloud-link:hover::after {
+    background-color: #ff5500;
 }
 
 /* Animations */
@@ -1704,7 +1717,20 @@ a {
     display: flex;
     gap: 4rem;
     align-items: flex-start;
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
+}
+
+.release-left-col {
+    flex: 1;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.release-left-col .release-artwork-large {
+    max-width: 100%;
+    flex: none;
 }
 
 .release-artwork-large {
@@ -1731,13 +1757,20 @@ a {
     gap: 1.5rem;
 }
 
+.release-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 .release-title {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
     font-weight: 700;
     line-height: 1.1;
     text-transform: uppercase;
     letter-spacing: 2px;
+    white-space: nowrap;
 }
 
 .release-artist {
@@ -1755,7 +1788,18 @@ a {
 }
 
 .release-links {
-    margin-top: 2rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.release-links .primary-btn {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
 }
 
 .tracklist-section {
@@ -1794,13 +1838,26 @@ a {
 
 @media screen and (max-width: 768px) {
     .release-header {
+        display: flex;
         flex-direction: column;
         gap: 2rem;
     }
     
-    .release-artwork-large {
-        max-width: 100%;
+    .release-left-col, .release-meta {
+        display: contents;
     }
+    
+    .release-title-group { order: 1; }
+    
+    .release-artwork-large { 
+        order: 2;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .tracklist-section { order: 3; width: 100%; }
+    .release-links { order: 4; width: 100%; }
+    .description-section { order: 5; width: 100%; }
     
     .release-detail-main {
         padding-top: 100px;
