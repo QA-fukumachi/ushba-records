@@ -1620,22 +1620,18 @@ a {
     position: relative;
     width: 100%;
     aspect-ratio: 1 / 1;
-    background: transparent;
-    overflow: hidden;
-    border-radius: 4px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    background: none;
 }
 
 .badge-artwork img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.5s ease;
 }
 
 .badge-card:hover .badge-artwork img {
-    transform: scale(1.05);
-    /* subtle zoom on hover */
+    transform: none;
 }
 
 .play-overlay {
@@ -1644,6 +1640,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
+    border-radius: 50%;
     background: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: center;
@@ -1737,16 +1734,13 @@ a {
     flex: 1;
     max-width: 450px;
     aspect-ratio: 1/1;
-    background: #f0f0f0;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-    border-radius: 4px;
-    overflow: hidden;
+    background: none;
 }
 
 .release-artwork-large img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
 }
 
