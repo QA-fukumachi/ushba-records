@@ -1612,8 +1612,10 @@ a {
     transition: transform 0.3s ease;
 }
 
-.badge-card:hover {
-    transform: translateY(-5px);
+@media (hover: hover) {
+    .badge-card:hover {
+        transform: translateY(-5px);
+    }
 }
 
 .badge-artwork {
@@ -1630,8 +1632,10 @@ a {
     transition: transform 0.5s ease;
 }
 
-.badge-card:hover .badge-artwork img {
-    transform: none;
+@media (hover: hover) {
+    .badge-card:hover .badge-artwork img {
+        transform: none;
+    }
 }
 
 .play-overlay {
@@ -1650,8 +1654,10 @@ a {
     text-decoration: none;
 }
 
-.badge-card:hover .play-overlay {
-    opacity: 1;
+@media (hover: hover) {
+    .badge-card:hover .play-overlay {
+        opacity: 1;
+    }
 }
 
 .play-icon {
