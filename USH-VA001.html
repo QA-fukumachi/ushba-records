@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORNICE CRUX EP [USH-VA001] | USHBA Records</title>
+    <meta name="description" content="Cornice Crux EP by Various Artists on USHBA Records. Pure techno frequencies.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .va-artist-desktop { display: block; white-space: nowrap; font-size: 1.15rem; }
+        .va-artist-mobile { display: none; }
+        .collectors-section { margin-bottom: 2rem; text-align: left; }
+        .collectors-subtitle { margin-bottom: 0; white-space: nowrap; font-size: clamp(1rem, 2vw, 1.3rem); }
+        .release-links-custom { flex-wrap: nowrap !important; justify-content: flex-start !important; }
+        
+        @media screen and (max-width: 768px) {
+            .va-artist-desktop { display: none; }
+            .va-artist-mobile { display: flex; flex-direction: column; gap: 0.2rem; text-align: left; font-size: 1.2rem; line-height: 1.4; }
+            .va-artist-names { font-size: 0.95rem; white-space: normal; }
+            .collectors-section { text-align: center; }
+            .collectors-subtitle { white-space: nowrap; font-size: clamp(0.9rem, 2.5vw, 1.2rem); letter-spacing: 1.5px; }
+            .release-links-custom { flex-wrap: wrap !important; justify-content: center !important; }
+        }
+    </style>
+</head>
+
+<body class="release-detail-page">
+    <!-- Top Navigation -->
+    <header class="top-nav scrolled">
+        <div class="nav-content">
+            <a href="index.html" class="logo-small">USHBA.</a>
+            <nav class="nav-links">
+                <a href="releases.html" class="nav-btn">Releases</a>
+                <a href="demo.html" class="nav-btn">Demo</a>
+                <a href="https://soundcloud.com/ushbarecords" target="_blank" rel="noopener noreferrer"
+                    class="nav-btn soundcloud-btn">Soundcloud</a>
+                <a href="https://ushbarecords.bandcamp.com/album/everything-lasts-ep" target="_blank"
+                    rel="noopener noreferrer" class="nav-btn bandcamp-btn">Bandcamp</a>
+                <div class="nav-dropdown-wrapper">
+                    <button class="nav-btn about-btn has-dropdown" aria-expanded="false">
+                        About <span class="nav-dropdown-icon">▼</span>
+                    </button>
+                    <div class="nav-dropdown-content">
+                        <a href="index.html#vision" class="nav-dropdown-link">Our Vision</a>
+                        <a href="ushba.html" class="nav-dropdown-link">Mt. Ushba</a>
+                        <a href="index.html#contact" class="nav-dropdown-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav-links">
+            <a href="releases.html" class="nav-btn">Releases</a>
+            <a href="demo.html" class="nav-btn">Demo</a>
+            <a href="https://soundcloud.com/ushbarecords" target="_blank" rel="noopener noreferrer"
+                class="nav-btn">Soundcloud</a>
+            <a href="https://ushbarecords.bandcamp.com/album/everything-lasts-ep" target="_blank"
+                rel="noopener noreferrer" class="nav-btn">Bandcamp</a>
+            <div class="mobile-dropdown-wrapper">
+                <button class="nav-btn mobile-about-btn has-dropdown" aria-expanded="false">
+                    About <span class="nav-dropdown-icon">▼</span>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="index.html#vision" class="mobile-dropdown-link">Our Vision</a>
+                    <a href="ushba.html" class="mobile-dropdown-link">Mt. Ushba</a>
+                    <a href="index.html#contact" class="mobile-dropdown-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="release-detail-main">
+        <div class="container release-detail-container">
+            <div class="release-header">
+                <div class="release-left-col">
+                    <div class="release-artwork-large flip-card">
+                        <button class="side-b-btn"
+                            onclick="const aw = this.parentElement.querySelector('.badge-artwork'); aw.classList.toggle('flipped'); this.innerText = aw.classList.contains('flipped') ? 'Side A' : 'Side B';">Side
+                            B</button>
+                        <div class="badge-artwork flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://res.cloudinary.com/dqm1d4yua/image/upload/v1782906252/Frame_18_myvaax.png"
+                                    alt="Cornice Crux [USH-VA001]">
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://res.cloudinary.com/dqm1d4yua/image/upload/v1782906252/Frame_17_szutor.png"
+                                    alt="Cornice Crux [USH-VA001] Side B">
+                            </div>
+                        </div>
+                    </div>
+                    <section class="description-section">
+                        <p class="release-description" id="release-description"
+                            style="text-align: justify; font-size: 1.05rem;">
+                            "Cornice Crux" arrives as the first various-artists release on USHBA Records, USH-VA001 —
+                            four artists gathered at the edge where the ridge gives way. True to the label's guiding
+                            principle, the collection binds the raw, untamed splendour of the natural world to the
+                            meticulous craft of techno. AMØK, Elias Garcia, Fukumachi, and Translate each offer a
+                            distinct descent, threading driving rhythms through evocative melody, sound born of shadow
+                            and stone that resounds far beyond the closing note.
+                        </p>
+                    </section>
+                </div>
+                <div class="release-meta">
+                    <div class="release-title-group">
+                        <h1 class="release-title" id="release-title">CORNICE CRUX EP</h1>
+                        <p class="release-catalog"
+                            style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 0rem; margin-bottom: -0.5rem; color: rgba(0,0,0,0.6);">
+                            Catalog: [USH-VA001]</p>
+                        <h2 class="release-artist" id="release-artist">
+                            <span class="va-artist-desktop">Artists: Elias Garcia, Fukumachi, AMØK, Translate</span>
+                            <span class="va-artist-mobile">
+                                <span>Artists:</span>
+                                <span class="va-artist-names">Elias Garcia, Fukumachi, AMØK, Translate</span>
+                            </span>
+                        </h2>
+                    </div>
+                    <section class="tracklist-section" style="margin-bottom: 0.5rem;">
+                        <h3 class="section-subtitle">Tracklist</h3>
+                        <ul class="tracklist" id="tracklist">
+                            <li>A1. Inlay</li>
+                            <li>A2. Aphasia</li>
+                            <li>B1. Trapezoid</li>
+                            <li>B2. Flat</li>
+                        </ul>
+                    </section>
+
+                    <section class="collectors-section">
+                        <h3 class="section-subtitle collectors-subtitle">
+                            <a href="https://ushbarecords.bandcamp.com/album/cornice-crux-ep?search_item_id%3D1937203423%26search_item_type%3Da%26search_match_part%3D%253F%26search_page_id%3D5541311242%26search_page_no%3D0%26search_rank%3D5="
+                                target="_blank"
+                                style="text-decoration: underline; color: var(--accent-color);">Collectors edition
+                                limited dubplates</a>
+                        </h3>
+                    </section>
+
+                    <div class="release-links release-links-custom">
+                        <a href="https://ushbarecords.bandcamp.com/album/cornice-crux-ep?search_item_id%3D1937203423%26search_item_type%3Da%26search_match_part%3D%253F%26search_page_id%3D5541311242%26search_page_no%3D0%26search_rank%3D5="
+                            target="_blank" class="primary-btn bandcamp-link">Buy on Bandcamp</a>
+                        <a href="https://soundcloud.com/ushbarecords/cornice-crux-ush-va001?si=c6c8615ec1b74df887a18fc79e69a471&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+                            target="_blank" class="primary-btn soundcloud-link">Listen on Soundcloud</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 USHBA Records. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

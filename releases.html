@@ -76,18 +76,26 @@
             <h1 class="page-header-title">ALL RELEASES</h1>
 
             <div class="badges-grid">
-                <!-- Badge 1: USHBA001 -->
-                <article class="badge-card">
-                    <div class="badge-artwork">
-                        <img src="https://res.cloudinary.com/dqm1d4yua/image/upload/v1774346089/USHBA001_ptezmg.png"
-                            alt="Everything Lasts EP [USHBA001]" loading="lazy"
-                            style="padding: 2.5%; background-color: transparent;">
-                        <a href="USHBA001.html" class="play-overlay">                           
-                        </a>
+                <!-- Badge 3: USH-VA001 -->
+                <article class="badge-card flip-card">
+                    <button class="side-b-btn" onclick="const aw = this.parentElement.querySelector('.badge-artwork'); aw.classList.toggle('flipped'); this.innerText = aw.classList.contains('flipped') ? 'Side A' : 'Side B';">Side B</button>
+                    <div class="badge-artwork flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://res.cloudinary.com/dqm1d4yua/image/upload/v1782906252/Frame_18_myvaax.png"
+                                alt="Cornice Crux [USH-VA001]" loading="lazy" style="padding: 1.8%;">
+                            <a href="USH-VA001.html" class="play-overlay">
+                            </a>
+                        </div>
+                        <div class="flip-card-back">
+                            <img src="https://res.cloudinary.com/dqm1d4yua/image/upload/v1782906252/Frame_17_szutor.png"
+                                alt="Cornice Crux [USH-VA001] Side B" loading="lazy" style="padding: 1.8%;">
+                            <a href="USH-VA001.html" class="play-overlay">
+                            </a>
+                        </div>
                     </div>
                     <div class="badge-info">
-                        <a href="USHBA001.html" class="badge-title">Everything Lasts EP [USHBA001]</a>
-                        <span class="badge-artist">Fukumachi</span>
+                        <a href="USH-VA001.html" class="badge-title">Cornice Crux [USH-VA001]</a>
+                        <span class="badge-artist">VARIOUS ARTISTS</span>
                     </div>
                 </article>
 
@@ -102,6 +110,21 @@
                     <div class="badge-info">
                         <a href="USHBA002.html" class="badge-title">USHBA002 (Coming Soon)</a>
                         <span class="badge-artist">USHBA</span>
+                    </div>
+                </article>
+
+                <!-- Badge 1: USHBA001 -->
+                <article class="badge-card">
+                    <div class="badge-artwork">
+                        <img src="https://res.cloudinary.com/dqm1d4yua/image/upload/v1774346089/USHBA001_ptezmg.png"
+                            alt="Everything Lasts EP [USHBA001]" loading="lazy"
+                            style="padding: 2.5%; background-color: transparent;">
+                        <a href="USHBA001.html" class="play-overlay">                           
+                        </a>
+                    </div>
+                    <div class="badge-info">
+                        <a href="USHBA001.html" class="badge-title">Everything Lasts EP [USHBA001]</a>
+                        <span class="badge-artist">Fukumachi</span>
                     </div>
                 </article>
             </div>
